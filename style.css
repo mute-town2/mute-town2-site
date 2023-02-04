@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+
+    background: url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    overflow: hidden;
+
+    --bg-col: 0, 0, 0;
+    --text-col: 255, 255, 255;
+
+    --blur-bg-col: rgba(var(--bg-col), 0.5);
+    --blur-bg-blur: blur(25px);
+
+    --taskbar-inline-padding: 16px;
+    --taskbar-height: 56px;
+}
+
+body * {
+    font-family: "Noto Sans";
+    color: rgb(var(--text-col));
+}
+
+/* Navigation */
+
+nav {
+    height: var(--taskbar-height);
+    padding-inline: var(--taskbar-inline-padding);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--blur-bg-col);
+    backdrop-filter: var(--blur-bg-blur);
+
+    z-index: 1;
+}
+
+nav > #taskbarLeft > img {
+    width: 30px;
+    height: 30px;
+}
+
+nav > * {
+    display: flex;
+    align-content: center;
+    gap: 8px;
+}
+
+nav > * > * {
+    padding: 6px;
+    border-radius: 6px;
+
+    user-select: none;
+    cursor: pointer;
+
+    transition: background-color 100ms;
+}
+
+nav > * > *:hover {
+    background-color: rgba(var(--text-col), 0.1);
+}
+
+nav > * * {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgb(var(--text-col), 0.85);
+}
+
+/* Time */
+
+#taskbarTime {
+    text-align: right;
+    padding: 5px;
+}
+
+#taskbarTime > * {
+    line-height: 2ch;
+}
+
+#timePanel {
+    width: 100vw;
+    height: 100vh;
+}
+
+#timePanelContext {
+    padding: 16px;
+    border-radius: 8px;
+    height: 400px;
+    width: 300px;
+
+    position: fixed;
+    bottom: calc(var(--taskbar-height) + var(--taskbar-inline-padding));
+    right: var(--taskbar-inline-padding);
+
+    background-color: var(--blur-bg-col);
+    backdrop-filter: var(--blur-bg-blur);
+
+    overflow: hidden;
+
+    transition: height 500ms, opacity 500ms;
+}
+
+#timePanelContext * {
+    margin: 0;
+    font-weight: 600;
+    user-select: none;
+}
+
+#timePanelContext > #panelTime > span {
+    font-weight: 300;
+    color: rgba(var(--text-col), 0.5);
+    font-size: 1.5rem;
+}
+
+/* Windows */
+
+.window {
+    min-width: 300px;
+    min-height: 200px;
+    width: 800px;
+    height: 500px;
+    border-radius: 6px;
+
+    background-color: rgba(var(--bg-col), 0.75);
+    backdrop-filter: var(--blur-bg-blur);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 7px;
+
+    position: fixed;
+    top: 100px;
+    left: 100px;
+
+    resize: both;
+    overflow: hidden;
+
+    transition: scale 200ms, opacity 200ms;
+}
+
+.window > .titleBar {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 32px;
+
+    padding-inline: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.window > .titleBar * {
+    font-size: 16px;
+    color: rgb(var(--text-col), 0.85);
+}
+
+.window > .titleBar img {
+    width: 16px;
+    height: 16px;
+}
+
+.window > .titleBar * {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+}
+
+.window > .windowContent {
+    position: absolute;
+    bottom: 0;
+    top: 32px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.closeWindow {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    user-select: all;
+    cursor: pointer;
+    background-color: rgba(var(--text-col), 0.15);
+
+    transition: background-color 100ms;
+}
+
+.closeWindow:hover {
+    background-color: red;
+}

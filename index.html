@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <script src="time.js" defer></script>
+    <script src="windows.js" defer></script>
+    <script src="files.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="files.css">
+    <title>mute-town2</title>
+</head>
+<body>
+    <nav>
+        <div id="taskbarLeft">
+            <!-- <img src="/assets/images/appIcons/mt2.svg" id="mt2"> -->
+            <img src="/assets/images/appIcons/webBrowser.svg" id="webBrowser">
+            <img src="/assets/images/appIcons/fileExplorer.svg" id="fileExplorer">
+        </div>
+        <div id="taskbarRight">
+            <div id="taskbarTime">
+                <p id="time">10:45AM</p>
+                <p id="date">Wed Oct 22nd</p>
+            </div>
+        </div>
+    </nav>
+    <div id="timePanel">
+        <div id="timePanelContext" style="opacity: 0; height: 0; display: none;">
+            <h1 id="panelTime">Hello</h1>
+        </div>
+    </div>
+    <div id="windows">
+        <div id="files" class="window">
+            <div id="filestitlebar" class="titleBar">
+                <div class="titleBarLeft">
+                    <img src="/assets/images/appIcons/fileExplorer.svg">
+                    <p>Files</p>
+                </div>
+                <div class="titleBarRight">
+                    <div class="closeWindow" id="closefiles"></div>
+                </div>
+            </div>
+            <div class="windowContent" id="filesContent">
+                <p id="directory"><span>C:/</span><span>Documents/</span></p>
+                <h1 id="currentDirectory"></h1>
+                <hr>
+                <div id="fileSelection">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <iframe src="hello.html" frameborder="0" width="600"></iframe> -->
+</body>
+</html>

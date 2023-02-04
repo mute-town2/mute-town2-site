@@ -1,0 +1,16 @@
+{
+    "Documents" : {
+        "type": "folder",
+        "created": "unknown",
+        "modified": "unknown",
+        "accessed": "unknown",
+        "children": {
+            "Welcome" : {
+                "type": "html",
+                "created": "unknown",
+                "modified": "unknown",
+                "accessed": "unknown"
+            }
+        }
+    }
+}

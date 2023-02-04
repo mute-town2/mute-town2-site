@@ -1,0 +1,59 @@
+#filesContent {
+    padding: 12px;
+}
+
+#filesContent * {
+    margin: 0;
+}
+
+#filesContent hr {
+    color: rgba(var(--text-col), 0.25);
+    margin-block: 8px;
+}
+
+#directory * {
+    color: rgba(var(--text-col), 0.75);
+    cursor: pointer;
+}
+
+#directory *:hover {
+    text-decoration: underline;
+}
+
+#fileSelection {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#fileSelection * {
+    user-select: none;
+}
+
+.individualFile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 100ms;
+}
+
+.individualFile img {
+    width: 18px;
+    height: 18px;
+}
+
+.individualFile p {
+    font-size: 16px;
+    color: rgba(var(--text-col), 0.75);
+}
+
+.individualFile:hover {
+    background-color: rgba(var(--text-col), 0.05);
+}
+
+.individualFile:active {
+    background-color: rgba(var(--text-col), 0.15);
+}
